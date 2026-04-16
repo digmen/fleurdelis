@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070709;
+  --color-gold: #dfab5a;
+  --color-btn-text: #43362a;
+
+  --font-cinzel: var(--font-cinzel);
+  --font-hanken: var(--font-hanken);
+  --font-grotesque: var(--font-grotesque);
+  --font-manege: var(--font-manege);
+  --font-kudry: var(--font-kudry);
+  --font-manege-demo: var(--font-manege-demo);
+  --font-atziluth: var(--font-atziluth);
+}
+
+html {
+  background-color: #070709;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #070709;
+  color: #ffffff;
+}
