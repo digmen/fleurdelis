@@ -15,7 +15,11 @@ export default function Footer() {
             key={s.label}
             href={s.href}
             aria-label={s.label}
-            className="w-22.75 h-22.75 rounded-full bg-bg flex items-center justify-center shrink-0"
+            className="rounded-full bg-bg flex items-center justify-center shrink-0"
+            style={{
+              width: "clamp(60px, 4.6vw + 42px, 91px)",
+              height: "clamp(60px, 4.6vw + 42px, 91px)",
+            }}
           >
             <Image
               alt={s.label}
@@ -27,10 +31,19 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <p className="pt-4.5 font-manege-demo font-light text-[24px] text-center text-bg leading-[120%] tracking-[-0.24px]">
-        Следите за нами в соцсетях!
+      <p
+        className="pt-4.5 font-manege-demo font-light text-center text-bg leading-[120%] tracking-[-0.01em]"
+        style={{ fontSize: "clamp(22px, 0.3vw + 21px, 24px)" }}
+      >
+        Следите за нами <br className="mob:hidden" />в соцсетях!
       </p>
-      <p className="pt-3.5 pb-10 font-hanken font-light not-italic text-[16px] text-center text-bg leading-[130%] tracking-[-0.16px]">
+      <p
+        className="pt-3.5 pb-10 font-hanken font-light not-italic text-center text-bg leading-[130%] tracking-[-0.01em] mx-auto"
+        style={{
+          fontSize: "clamp(14px, 0.3vw + 13px, 16px)",
+          maxWidth: "clamp(232px, 20vw + 155px, 100%)",
+        }}
+      >
         Там публикуется самая актуальная
         <br />и свежая информация по клубу
       </p>

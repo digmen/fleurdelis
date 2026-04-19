@@ -1,88 +1,82 @@
 import Image from "next/image";
 
-interface StatOvalProps {
-  multiplier?: string;
-  description: string;
-  gold?: boolean;
-}
-
-function StatOval({ multiplier, description, gold = false }: StatOvalProps) {
-  return (
-    <div className="relative shrink-0 w-70 md:w-77.5 lg:w-84.25" style={{ aspectRatio: "337/413" }}>
-      {/* Oval background */}
-      <div
-        className="absolute inset-0 rounded-[50%]"
-        style={{
-          background: gold
-            ? "radial-gradient(ellipse at 40% 40%, #c9a660 0%, #8b6830 60%, #5c4420 100%)"
-            : "radial-gradient(ellipse at 30% 30%, #4a1570 0%, #2a0845 55%, #150524 100%)",
-        }}
-      />
-
-      {/* Texture overlay */}
-      <div className="absolute inset-0 overflow-hidden rounded-[50%] opacity-50">
-        <Image src="/images/stat-circle-bg.png" alt="" fill className="object-cover" sizes="(max-width: 640px) 280px, (max-width: 1024px) 310px, 337px" />
-      </div>
-
-      {/* Decorative lines */}
-      <div className="absolute inset-0 overflow-hidden rounded-[50%] opacity-30">
-        <Image src="/images/stat-vector.svg" alt="" fill className="object-cover" />
-      </div>
-
-      {/* Glow */}
-      <div className="absolute inset-[-10%] overflow-hidden opacity-40">
-        <Image src="/images/stat-glow.svg" alt="" fill className="object-contain" />
-      </div>
-
-      {/* Text */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-        {multiplier && (
-          <p
-            className="font-manege font-light text-white leading-[1.2] tracking-[-0.01em] mb-2"
-            style={{ fontSize: "clamp(24px, 2.2vw, 32px)" }}
-          >
-            {multiplier}
-          </p>
-        )}
-        <p
-          className="font-manege font-light text-white leading-[1.2] tracking-[-0.01em]"
-          style={{ fontSize: "clamp(16px, 1.6vw, 22px)" }}
-        >
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default function Stats() {
   return (
-    <section className="relative w-full bg-bg py-16 md:py-24 overflow-hidden">
-      <div className="max-w-360 mx-auto px-4 md:px-10 xl:px-20">
-
-        {/* Heading */}
-        <h2
-          className="font-manege font-light text-white text-center leading-[1.1] tracking-[-0.01em] mb-12 md:mb-16"
-          style={{ fontSize: "clamp(28px, 3.6vw, 52px)" }}
-        >
-          Почему выбирают именно нас?
-        </h2>
-
-        {/* 3 ovals */}
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
-          <StatOval
-            multiplier="В 2.5x"
-            description="расширение социального капитала"
+    <section className="relative pt-25 max-[950px]:pt-20 max-[500px]:pt-16 max-[375px]:pt-12 w-full overflow-hidden bg-white flex flex-col items-center justify-center">
+      <h1 className="font-manege-demo text-bg text-[52px] max-[1200px]:text-[44px] max-[950px]:text-[38px] max-[700px]:text-[32px] max-[500px]:text-[28px] max-[375px]:text-[26px] font-light leading-[120%] tracking-[-0.52px] text-center px-4">
+        Почему выбирают именно нас<span className="font-sans">?</span>
+      </h1>
+      <article className="relative z-10 flex justify-center items-center gap-[52px] max-[1200px]:gap-[36px] max-[950px]:gap-[32px] mt-[60px] max-[950px]:mt-[44px] max-[500px]:mt-[32px] pb-[80px] max-[950px]:pb-[60px] max-[500px]:pb-[48px] max-[950px]:flex-col">
+        <div className="relative w-[337px] h-[413px] max-[1200px]:w-[300px] max-[1200px]:h-[368px] max-[950px]:w-[280px] max-[950px]:h-[343px] max-[500px]:w-[257px] max-[500px]:h-[315px]">
+          <Image
+            alt=""
+            width={337}
+            height={413}
+            src="/images/stats/img1.png"
+            className="absolute inset-0 w-full h-full"
           />
-          <StatOval
-            multiplier="В 2.5x"
-            description="ускорение роста активов и личного дохода"
-          />
-          <StatOval
-            description={"Формирование\nличного бренда\nи позиционирования"}
-            gold
-          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <p className="font-manege-demo text-white text-[24px] max-[1200px]:text-[22px] max-[500px]:text-[20px] max-[375px]:text-[18px] font-light leading-[120%] tracking-[-0.24px]">
+              В 2.5x
+            </p>
+            <p className="font-manege-demo text-white text-[24px] max-[1200px]:text-[20px] max-[950px]:text-[19px] max-[500px]:text-[18px] max-[375px]:text-[16px] font-light leading-[120%] tracking-[-0.24px] mt-2">
+              расширение <br />
+              социального <br />
+              капитала
+            </p>
+          </div>
         </div>
+        <div className="relative w-[337px] h-[413px] max-[1200px]:w-[300px] max-[1200px]:h-[368px] max-[950px]:w-[280px] max-[950px]:h-[343px] max-[500px]:w-[257px] max-[500px]:h-[315px]">
+          <Image
+            alt=""
+            width={337}
+            height={413}
+            src="/images/stats/img2.png"
+            className="absolute inset-0 w-full h-full"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <p className="font-manege-demo text-white text-[24px] max-[1200px]:text-[22px] max-[500px]:text-[20px] max-[375px]:text-[18px] font-light leading-[120%] tracking-[-0.24px]">
+              В 2.5x
+            </p>
+            <p className="font-manege-demo text-white text-[24px] max-[1200px]:text-[20px] max-[950px]:text-[19px] max-[500px]:text-[18px] max-[375px]:text-[16px] font-light leading-[120%] tracking-[-0.24px] mt-2">
+              ускорение роста <br />
+              активов и личного <br />
+              дохода
+            </p>
+          </div>
+        </div>
+        <div className="relative w-[337px] h-[413px] max-[1200px]:w-[300px] max-[1200px]:h-[368px] max-[950px]:w-[280px] max-[950px]:h-[343px] max-[500px]:w-[257px] max-[500px]:h-[315px]">
+          <Image
+            alt=""
+            width={337}
+            height={413}
+            src="/images/stats/img3.png"
+            className="absolute inset-0 w-full h-full"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <p className="font-manege-demo text-bg text-[24px] max-[1200px]:text-[20px] max-[950px]:text-[19px] max-[500px]:text-[18px] max-[375px]:text-[16px] font-light leading-[120%] tracking-[-0.24px]">
+              Формирование <br />
+              личного бренда <br />и позиционирования
+            </p>
+          </div>
+        </div>
+      </article>
+      <div className="absolute -top-[30%] left-[-26%] w-[40%] aspect-103/166 rotate-0 max-[768px]:hidden">
+        <Image
+          alt=""
+          fill
+          src="/images/welcome/petal2.png"
+          className="object-contain"
+        />
+      </div>
+      <div className="absolute top-[30%] -right-[2.5%] w-[103.489px] rotate-[100deg] max-[768px]:hidden">
+        <Image
+          alt=""
+          width={103.489}
+          height={165.973}
+          src="/images/welcome/petal2.png"
+          className="object-contain"
+        />
       </div>
     </section>
   );

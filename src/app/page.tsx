@@ -17,10 +17,10 @@ export default function HomePage() {
       <Benefits />
       <Founder />
       <MembershipLevels />
-      {/* <FdlBreak />
+      <FdlBreak />
       <Stats />
       <CtaCollage />
-      <FinalCta /> */}
+      <FinalCta />
       <Footer />
     </main>
   );
