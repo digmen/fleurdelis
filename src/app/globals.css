@@ -140,4 +140,31 @@ body {
   }
 }
 
+/* Внутри мобильного диапазона (<950px):
+   - slider виден от 500px до 950px
+   - small виден до 500px */
+.benefits-slider {
+  display: none;
+}
 
+.benefits-small {
+  display: flex;
+}
+
+@media (min-width: 500px) {
+  .benefits-slider {
+    display: flex;
+  }
+  .benefits-small {
+    display: none;
+  }
+}
+
+@media (min-width: 950px) {
+  .benefits-slider {
+    display: none;
+  }
+  .benefits-small {
+    display: none;
+  }
+}

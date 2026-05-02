@@ -10,14 +10,14 @@ export default function Founder() {
         <div className="founder-left-mobile flex flex-col" style={{ gap: "clamp(24px, 4vw + 10px, 70px)" }}>
           <p
             className="font-manege-demo text-bg font-light leading-[105%] tracking-[-0.01em]"
-            style={{ fontSize: "clamp(20px, 4.6vw - 2px, 52px)" }}
+            style={{ fontSize: "clamp(26px, 4.6vw - 2px, 52px)" }}
           >
             Fleur-de-Lis это
             <br />
             не про «поговорить»
           </p>
           <div className="founder-content-row" style={{ gap: "clamp(16px, 4vw, 64px)" }}>
-            <div className="relative shrink-0" style={{ width: "clamp(100px, 18vw + 25px, 288px)", height: "clamp(122px, 22vw + 30px, 353px)" }}>
+            <div className="relative shrink-0" style={{ width: "clamp(180px, 18vw + 25px, 288px)", height: "clamp(220px, 22vw + 30px, 353px)" }}>
               <Image
                 src="/images/founder/img1.png"
                 alt=""
@@ -37,13 +37,13 @@ export default function Founder() {
             <div className="flex flex-col justify-center items-start" style={{ gap: "clamp(20px, 4vw + 5px, 70px)" }}>
               <p
                 className="font-manege-demo text-bg font-light leading-[120%] tracking-[-0.01em]"
-                style={{ fontSize: "clamp(10px, 1.4vw + 4px, 24px)", maxWidth: "clamp(140px, 22vw + 30px, 339px)" }}
+                style={{ fontSize: "clamp(15px, 1.4vw + 4px, 24px)", maxWidth: "clamp(260px, 22vw + 30px, 339px)" }}
               >
                 — это место, где формируется личность, статус и деловая позиция
                 каждой из участниц в среде живого общения
               </p>
               <div className="flex justify-center items-center" style={{ gap: "clamp(12px, 3vw + 5px, 55px)" }}>
-                <div className="relative shrink-0" style={{ width: "clamp(50px, 8vw + 10px, 137px)", height: "clamp(50px, 8vw + 10px, 137px)" }}>
+                <div className="relative shrink-0" style={{ width: "clamp(70px, 8vw + 10px, 137px)", height: "clamp(70px, 8vw + 10px, 137px)" }}>
                   <Image
                     src="/images/founder/elipse.png"
                     alt=""
@@ -62,7 +62,7 @@ export default function Founder() {
                 </div>
                 <p
                   className="font-hanken text-bg font-light leading-[130%] tracking-[-0.01em]"
-                  style={{ fontSize: "clamp(9px, 0.7vw + 5px, 16px)" }}
+                  style={{ fontSize: "clamp(13px, 0.7vw + 5px, 16px)" }}
                 >
                   <strong className="font-semibold">
                     Посмотрите <br /> видео о клубе
@@ -79,8 +79,8 @@ export default function Founder() {
           <div
             className="relative shrink-0"
             style={{
-              width: "clamp(160px, 21vw + 60px, 377px)",
-              height: "clamp(196px, 26vw + 72px, 462px)",
+              width: "clamp(240px, 21vw + 60px, 377px)",
+              height: "clamp(294px, 26vw + 72px, 462px)",
               backgroundImage: "url('/images/founder/frame.png')",
               backgroundSize: "100% 100%",
               backgroundRepeat: "no-repeat",
@@ -102,16 +102,16 @@ export default function Founder() {
                 width={260}
                 height={229}
                 className="self-center"
-                style={{ width: "clamp(100px, 14vw + 30px, 260px)", height: "auto" }}
+                style={{ width: "clamp(160px, 14vw + 30px, 260px)", height: "auto" }}
               />
               <div className="flex flex-col" style={{ marginTop: "clamp(4px, 0.8vw, 16px)" }}>
                 <p
                   className="font-atziluth text-bg font-medium leading-[85%] tracking-[0.02em] text-center"
-                  style={{ fontSize: "clamp(14px, 1.7vw + 6px, 32px)" }}
+                  style={{ fontSize: "clamp(20px, 1.7vw + 6px, 32px)" }}
                 >
                   Татьяна Гарусова
                 </p>
-                <p className="text-center" style={{ fontSize: "clamp(8px, 0.5vw + 6px, 14px)" }}>
+                <p className="text-center" style={{ fontSize: "clamp(11px, 0.5vw + 6px, 14px)" }}>
                   <span
                     style={{
                       background:
@@ -133,7 +133,7 @@ export default function Founder() {
           </div>
           <p
             className="font-manege-demo text-bg font-light leading-[130%] tracking-[0.02em] text-center"
-            style={{ fontSize: "clamp(10px, 1.4vw + 2px, 24px)", maxWidth: "clamp(160px, 9vw + 150px, 289px)" }}
+            style={{ fontSize: "clamp(15px, 1.4vw + 2px, 24px)", maxWidth: "clamp(240px, 9vw + 150px, 289px)" }}
           >
             «В Fleur-de-Lis вы сами определяете масштаб и темп своего роста»
           </p>

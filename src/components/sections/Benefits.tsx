@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const cards = [
   {
@@ -45,6 +48,13 @@ const cards = [
 ];
 
 export default function Benefits() {
+  const [activeCard, setActiveCard] = useState(0);
+  const totalCards = cards.length;
+  const nextCard = () =>
+    setActiveCard((prev) => (prev + 1) % totalCards);
+  const prevCard = () =>
+    setActiveCard((prev) => (prev - 1 + totalCards) % totalCards);
+
   return (
     <section className="w-full relative bg-white" style={{ minHeight: "clamp(610px, 50vw + 220px, 880px)" }}>
       <Image
@@ -155,59 +165,153 @@ export default function Benefits() {
             ))}
           </div>
 
-          <div className="benefits-carousel benefits-cards-mobile gap-6 mt-8 w-full overflow-x-auto snap-x snap-mandatory scroll-smooth">
-            {cards.map((card) => (
-              <div
-                key={card.number}
-                className="relative overflow-hidden shrink-0 snap-center"
-                style={{ width: "280px", height: "326px" }}
-              >
-                <Image alt="" fill src={card.bg} className="object-cover" />
-                <img
-                  alt=""
-                  src={card.frame}
-                  className="absolute top-2.5 left-2.5 pointer-events-none"
-                  style={{
-                    width: "calc(100% - 20px)",
-                    height: "calc(100% - 20px)",
-                  }}
-                />
-                <div className="relative z-10 h-full flex flex-col px-6 pt-7 pb-6">
-                  <p
-                    className={`font-manege-demo font-light text-[25px] leading-[120%] tracking-[-0.01em] ${card.numberColor}`}
-                  >
-                    {card.number}
-                  </p>
-                  <div className="flex-1 flex items-center justify-center">
-                    <Image
-                      alt=""
-                      src={card.icon}
-                      width={140}
-                      height={140}
-                      className="w-auto h-auto max-h-35"
-                    />
+          {/* Мобильный слайдер (500px–950px) */}
+          <div className="benefits-cards-mobile benefits-slider mt-8 w-full">
+            <div className="benefits-carousel gap-6 w-full overflow-x-auto snap-x snap-mandatory scroll-smooth flex">
+              {cards.map((card) => (
+                <div
+                  key={card.number}
+                  className="relative overflow-hidden shrink-0 snap-center"
+                  style={{ width: "280px", height: "326px" }}
+                >
+                  <Image alt="" fill src={card.bg} className="object-cover" />
+                  <img
+                    alt=""
+                    src={card.frame}
+                    className="absolute top-2.5 left-2.5 pointer-events-none"
+                    style={{
+                      width: "calc(100% - 20px)",
+                      height: "calc(100% - 20px)",
+                    }}
+                  />
+                  <div className="relative z-10 h-full flex flex-col px-6 pt-7 pb-6">
+                    <p
+                      className={`font-manege-demo font-light text-[25px] leading-[120%] tracking-[-0.01em] ${card.numberColor}`}
+                    >
+                      {card.number}
+                    </p>
+                    <div className="flex-1 flex items-center justify-center">
+                      <Image
+                        alt=""
+                        src={card.icon}
+                        width={140}
+                        height={140}
+                        className="w-auto h-auto max-h-35"
+                      />
+                    </div>
+                    <p
+                      className={`font-manege-demo text-[25px] text-center leading-[115%] tracking-[-0.01em] mb-2 ${card.titleColor}`}
+                    >
+                      {card.title}
+                    </p>
+                    <p
+                      className={`font-hanken font-normal text-[15px] text-center leading-[135%] tracking-[-0.01em] ${card.descColor}`}
+                    >
+                      {card.description.map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.description.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
                   </div>
-                  <p
-                    className={`font-manege-demo text-[25px] text-center leading-[115%] tracking-[-0.01em] mb-2 ${card.titleColor}`}
-                  >
-                    {card.title}
-                  </p>
-                  <p
-                    className={`font-hanken font-normal text-[15px] text-center leading-[135%] tracking-[-0.01em] ${card.descColor}`}
-                  >
-                    {card.description.map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        {i < card.description.length - 1 && <br />}
-                      </span>
-                    ))}
-                  </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Маленький экран (<500px): карточки с кнопками */}
+          <div className="benefits-cards-mobile benefits-small mt-8 w-full flex justify-center">
+            <div className="relative" style={{ width: "280px", height: "326px" }}>
+              {cards.map((card, index) => (
+                <div
+                  key={card.number}
+                  className={`absolute inset-0 overflow-hidden transition-opacity duration-500 ${
+                    index === activeCard
+                      ? "opacity-100"
+                      : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <Image alt="" fill src={card.bg} className="object-cover" />
+                  <img
+                    alt=""
+                    src={card.frame}
+                    className="absolute top-2.5 left-2.5 pointer-events-none"
+                    style={{
+                      width: "calc(100% - 20px)",
+                      height: "calc(100% - 20px)",
+                    }}
+                  />
+                  <div className="relative z-10 h-full flex flex-col px-6 pt-7 pb-6">
+                    <p
+                      className={`font-manege-demo font-light text-[25px] leading-[120%] tracking-[-0.01em] ${card.numberColor}`}
+                    >
+                      {card.number}
+                    </p>
+                    <div className="flex-1 flex items-center justify-center">
+                      <Image
+                        alt=""
+                        src={card.icon}
+                        width={140}
+                        height={140}
+                        className="w-auto h-auto max-h-35"
+                      />
+                    </div>
+                    <p
+                      className={`font-manege-demo text-[25px] text-center leading-[115%] tracking-[-0.01em] mb-2 ${card.titleColor}`}
+                    >
+                      {card.title}
+                    </p>
+                    <p
+                      className={`font-hanken font-normal text-[15px] text-center leading-[135%] tracking-[-0.01em] ${card.descColor}`}
+                    >
+                      {card.description.map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.description.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Стрелки — только <500px */}
+          <div className="benefits-cards-mobile benefits-small mt-4 mb-4 flex justify-center items-center gap-[12px] w-full">
+            <button
+              type="button"
+              aria-label="Предыдущая карточка"
+              onClick={prevCard}
+              className="flex items-center justify-center w-[40px] h-[40px] max-[375px]:w-[36px] max-[375px]:h-[36px] rounded-full bg-white/6 border border-white/10 cursor-pointer transition-colors hover:bg-white/12"
+            >
+              <Image
+                src="/images/membershiplevels/mobarrow.svg"
+                alt=""
+                width={8}
+                height={14}
+                className="w-[8px] h-[14px]"
+              />
+            </button>
+            <button
+              type="button"
+              aria-label="Следующая карточка"
+              onClick={nextCard}
+              className="flex items-center justify-center w-[40px] h-[40px] max-[375px]:w-[36px] max-[375px]:h-[36px] rounded-full bg-white/6 border border-white/10 cursor-pointer transition-colors hover:bg-white/12"
+            >
+              <Image
+                src="/images/membershiplevels/mobarrow.svg"
+                alt=""
+                width={8}
+                height={14}
+                className="w-[8px] h-[14px] rotate-180"
+              />
+            </button>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
