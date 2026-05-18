@@ -7,6 +7,7 @@ import FdlBreak from "@/components/sections/FdlBreak";
 import Stats from "@/components/sections/Stats";
 import CtaCollage from "@/components/sections/CtaCollage";
 import FinalCta from "@/components/sections/FinalCta";
+import Invitation from "@/components/sections/Invitation";
 import Footer from "@/components/sections/Footer";
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Stats />
       <CtaCollage />
       <FinalCta />
+      <Invitation />
       <Footer />
     </main>
   );

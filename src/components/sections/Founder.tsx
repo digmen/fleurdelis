@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FounderVideoButton from "./FounderVideoButton";
 
 export default function Founder() {
   return (
@@ -43,23 +44,7 @@ export default function Founder() {
                 каждой из участниц в среде живого общения
               </p>
               <div className="flex justify-center items-center" style={{ gap: "clamp(12px, 3vw + 5px, 55px)" }}>
-                <div className="relative shrink-0" style={{ width: "clamp(70px, 8vw + 10px, 137px)", height: "clamp(70px, 8vw + 10px, 137px)" }}>
-                  <Image
-                    src="/images/founder/elipse.png"
-                    alt=""
-                    width={137}
-                    height={137}
-                    className="absolute inset-0 z-0 w-full h-full"
-                  />
-                  <Image
-                    src="/images/founder/play.svg"
-                    alt=""
-                    width={31}
-                    height={31}
-                    className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    style={{ width: "clamp(14px, 2vw + 4px, 31px)", height: "clamp(14px, 2vw + 4px, 31px)" }}
-                  />
-                </div>
+                <FounderVideoButton />
                 <p
                   className="font-hanken text-bg font-light leading-[130%] tracking-[-0.01em]"
                   style={{ fontSize: "clamp(13px, 0.7vw + 5px, 16px)" }}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
+import ContactModal from "@/components/sections/ContactModal";
 
 export default function Hero() {
   return (
@@ -139,7 +139,7 @@ export default function Hero() {
         </p>
 
         <div>
-          <Button href="#contact" />
+          <ContactModal />
         </div>
       </div>
     </section>

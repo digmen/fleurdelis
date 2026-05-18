@@ -8,45 +8,69 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="flex gap-3.25 justify-center pt-9">
-        {socials.map((s) => (
+    <footer className="bg-bg">
+      <div className="flex flex-col py-10 px-40 gap-5 max-[600px]:px-6 max-[600px]:items-center">
+
+        {/* Row 1: logo+desc left, socials right | mobile: stacked centered */}
+        <div className="flex flex-row justify-between max-[600px]:flex-col max-[600px]:items-center max-[600px]:gap-8 max-[600px]:w-full">
+
+          {/* Logo + description */}
+          <div className="flex flex-col items-center gap-4 pt-10 max-[600px]:pt-0">
+            <div className="flex items-center gap-7.5 max-[600px]:flex-col max-[600px]:gap-3">
+              <Image
+                src="/images/hero/logo.webp"
+                alt="Fleur-de-Lis logo"
+                width={67}
+                height={67}
+                className="mx-auto"
+              />
+              <p className="font-manege-demo font-light text-[12px] max-[600px]:text-center">
+                Суверенный бизнес-клуб <br /> с домом для резидентов
+              </p>
+            </div>
+          </div>
+
+          {/* Socials */}
+          <div className="flex gap-3.25 justify-center pt-9 max-[600px]:pt-0">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                className="rounded-full bg-[#212128] flex items-center justify-center shrink-0"
+                style={{
+                  width: "clamp(60px, 4.6vw + 42px, 65px)",
+                  height: "clamp(60px, 4.6vw + 42px, 65px)",
+                }}
+              >
+                <Image
+                  alt={s.label}
+                  src={s.src}
+                  width={40}
+                  height={40}
+                  className="w-auto h-auto"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2: политика left, следите right | mobile: следите first, политика last */}
+        <div className="flex flex-row justify-between items-end max-[600px]:flex-col max-[600px]:items-center max-[600px]:text-center max-[600px]:gap-6 max-[600px]:w-full">
           <a
-            key={s.label}
-            href={s.href}
-            aria-label={s.label}
-            className="rounded-full bg-bg flex items-center justify-center shrink-0"
-            style={{
-              width: "clamp(60px, 4.6vw + 42px, 91px)",
-              height: "clamp(60px, 4.6vw + 42px, 91px)",
-            }}
+            href="#"
+            className="underline text-[14px] font-hanken font-normal text-white max-[600px]:order-2"
           >
-            <Image
-              alt={s.label}
-              src={s.src}
-              width={40}
-              height={40}
-              className="w-auto h-auto"
-            />
+            Политика конфиденциальности
           </a>
-        ))}
+          <p className="text-right text-[14px] font-hanken font-normal text-white max-[600px]:text-center max-[600px]:order-1">
+            Следите за нами в соцсетях! Там публикуется
+            <br />
+            самая актуальная и свежая информация по клубу
+          </p>
+        </div>
+
       </div>
-      <p
-        className="pt-4.5 font-manege-demo font-light text-center text-bg leading-[120%] tracking-[-0.01em]"
-        style={{ fontSize: "clamp(22px, 0.3vw + 21px, 24px)" }}
-      >
-        Следите за нами <br className="mob:hidden" />в соцсетях!
-      </p>
-      <p
-        className="pt-3.5 pb-10 font-hanken font-light not-italic text-center text-bg leading-[130%] tracking-[-0.01em] mx-auto"
-        style={{
-          fontSize: "clamp(14px, 0.3vw + 13px, 16px)",
-          maxWidth: "clamp(232px, 20vw + 155px, 100%)",
-        }}
-      >
-        Там публикуется самая актуальная
-        <br />и свежая информация по клубу
-      </p>
     </footer>
   );
 }

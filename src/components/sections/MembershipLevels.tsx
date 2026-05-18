@@ -71,7 +71,7 @@ export default function MembershipLevels() {
         "Окружение — это зеркало,\nв котором проявляются ваши\nистинные возможности",
     },
     {
-      title: "Дама Золотого Света",
+      title: "Дама Золотого Совета",
       description: "Вы участвуете в стратегических",
       description2: "решениях Дома",
       benefits: [
@@ -285,9 +285,9 @@ export default function MembershipLevels() {
                       {card.text}
                     </p>
                     <div className="relative flex justify-center items-center mt-[19px] max-[1200px]:mt-[16px] max-[950px]:mt-[13px] max-[700px]:mt-[11px] max-[500px]:mt-[9px] max-[375px]:mt-[8px]">
-                      <a
-                        href="#"
-                        className="relative w-[251px] h-[75px] max-[1200px]:w-[225px] max-[1200px]:h-[67px] max-[950px]:w-[200px] max-[950px]:h-[60px] max-[700px]:w-[175px] max-[700px]:h-[52px] max-[500px]:w-[155px] max-[500px]:h-[46px] max-[375px]:w-[140px] max-[375px]:h-[42px] flex justify-center items-center"
+                      <button
+                        onClick={() => window.dispatchEvent(new Event("open-contact-modal"))}
+                        className="relative w-[251px] h-[75px] max-[1200px]:w-[225px] max-[1200px]:h-[67px] max-[950px]:w-[200px] max-[950px]:h-[60px] max-[700px]:w-[175px] max-[700px]:h-[52px] max-[500px]:w-[155px] max-[500px]:h-[46px] max-[375px]:w-[140px] max-[375px]:h-[42px] flex justify-center items-center cursor-pointer"
                       >
                         <Image
                           src="/images/btn-outer.svg"
@@ -306,7 +306,7 @@ export default function MembershipLevels() {
                         <span className="relative z-10 font-darker-grotesque text-[#43362A] text-[14px] max-[1200px]:text-[13px] max-[950px]:text-[12px] max-[700px]:text-[11px] max-[500px]:text-[10px] max-[375px]:text-[9px] font-semibold leading-[135%] tracking-[0.42px] uppercase">
                           Получить приглашение
                         </span>
-                      </a>
+                      </button>
                     </div>
                     <div className="pt-[38px] max-[1200px]:pt-[32px] max-[950px]:pt-[26px] max-[700px]:pt-[22px] max-[500px]:pt-[18px] max-[375px]:pt-[16px] flex justify-center items-center">
                       <svg
